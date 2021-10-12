@@ -1,4 +1,5 @@
 ﻿import React from "react";
+import Moment from 'react-moment';
 
 const TodosList = ({ todos, setTodos, setEditTodo }) => {
   const handleComplete = (todo) => {
@@ -21,11 +22,16 @@ const TodosList = ({ todos, setTodos, setEditTodo }) => {
     setTodos(todos.filter((todo) => todo.id !== id));
   };
 
+  const date = new Date();
+
   return (
     <div>
       {todos.map((todo) => (
         <li className="list-item" key="{todo.id}">
+          <Moment style={{padding: '7px', color: 'white'}}
+            format='MMMM Do YYYY'>{date}</Moment>
           <input
+            style={{borderLeft: '2px solid black'}}
             type="text"
             value={todo.title}
             className={`list ${todo.completed ? "complete" : ""}`}

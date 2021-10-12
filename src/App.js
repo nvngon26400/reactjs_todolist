@@ -15,7 +15,7 @@ const App = () => {
   }, [todos]);
 
   return (
-    <div className="container">
+    <div style={{background: '#dfe6e9'}} className="container">
       <div className="app-wrapper">
         <div>
           <Header />
